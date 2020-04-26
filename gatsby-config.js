@@ -1,11 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: 'Overreacted',
-    author: 'Dan Abramov',
-    description: 'Personal blog by Dan Abramov. I explain with words and code.',
-    siteUrl: 'https://overreacted.io',
+    title: 'WithCloud Dev',
+    author: 'Comus Leong',
+    description: 'WithCloud Dev blog. Just talk about code and development.',
+    siteUrl: 'https://withcloud.dev',
     social: {
-      twitter: '@dan_abramov',
+      twitter: '@comusleong',
     },
   },
   pathPrefix: '/',
@@ -80,7 +80,7 @@ module.exports = {
               return allMarkdownRemark.edges.map(edge => {
                 const siteUrl = site.siteMetadata.siteUrl;
                 const postText = `
-                <div style="margin-top=55px; font-style: italic;">(This is an article posted to my blog at overreacted.io. You can read it online by <a href="${siteUrl +
+                <div style="margin-top=55px; font-style: italic;">(This is an article posted to withcloud dev blog at withcloud.dev. You can read it online by <a href="${siteUrl +
                   edge.node.fields.slug}">clicking here</a>.)</div>
               `;
 
@@ -126,47 +126,47 @@ module.exports = {
               }
             `,
             output: '/rss.xml',
-            title: "Dan Abramov's Overreacted Blog RSS Feed",
+            title: 'WithCloud Dev Blog RSS Feed',
           },
         ],
       },
     },
-    {
-      resolve: `gatsby-plugin-ebook`,
-      options: {
-        filename: 'overreacted-ebook.epub',
-        query: `
-          {
-            site {
-              siteMetadata {
-                title
-                author
-              }
-            }
-            allMarkdownRemark(
-              sort: { fields: frontmatter___date, order: ASC },
-              filter: { fields: { langKey: { eq: "en" } } }
-            ) {
-              edges {
-                node {
-                  id
-                  fileAbsolutePath
-                  rawMarkdownBody
-                  frontmatter {
-                    title
-                    date
-                  }
-                }
-              }
-            }
-          }`,
-      },
-    },
+    // {
+    //   resolve: `gatsby-plugin-ebook`,
+    //   options: {
+    //     filename: 'overreacted-ebook.epub',
+    //     query: `
+    //       {
+    //         site {
+    //           siteMetadata {
+    //             title
+    //             author
+    //           }
+    //         }
+    //         allMarkdownRemark(
+    //           sort: { fields: frontmatter___date, order: ASC },
+    //           filter: { fields: { langKey: { eq: "en" } } }
+    //         ) {
+    //           edges {
+    //             node {
+    //               id
+    //               fileAbsolutePath
+    //               rawMarkdownBody
+    //               frontmatter {
+    //                 title
+    //                 date
+    //               }
+    //             }
+    //           }
+    //         }
+    //       }`,
+    //   },
+    // },
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Overreacted`,
-        short_name: `Overreacted`,
+        name: `WithCloud Dev`,
+        short_name: `WithCloud Dev`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: `#ffa7c4`,

@@ -24,7 +24,7 @@ class BlogIndexTemplate extends React.Component {
           <Bio />
         </aside>
         <main>
-          {langKey !== 'en' && langKey !== 'ru' && (
+          {/* {langKey !== 'en' && langKey !== 'ru' && (
             <Panel>
               These articles have been{' '}
               <a
@@ -36,7 +36,7 @@ class BlogIndexTemplate extends React.Component {
               </a>
               .
             </Panel>
-          )}
+          )} */}
 
           {posts.map(({ node }) => {
             const title = get(node, 'frontmatter.title') || node.fields.slug;
